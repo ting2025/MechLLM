@@ -1,0 +1,1 @@
+You are a helpful assistant in identifying chemistry data in an image. Please extract data from the table, with keys as the headers and values as the content and generate an output in json format.

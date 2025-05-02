@@ -1,0 +1,55 @@
+You are an expert assistant in analyzing reaction mechanisms from chemistry reaction diagrams. 
+This image contains a multi-step reaction mechanism with electron movements and bond formation events. 
+Use second image which provides atom numbering and connectivity information, which will be used for precise atom-to-atom mapping.
+Requirements:
+    Extract Mechanistic Steps:
+        Identify each electron movement in the reaction mechanism.
+        Only identify the electron movements denoted by curved arrows on the original image.
+        Determine bond formations and bond cleavages.
+    Map Atoms Using Number Labels:
+        Use the atom numbering from the second image to reference each atom.
+        Ensure that each electron movement is described with atom numbers.
+        Describe the Reaction Mechanism in a Structured Format:
+    Each step must specify:
+        The electron donor and acceptor atoms.
+        Any new bond formations or bond cleavages.
+    Generate the Output as a Structured JSON:
+    Include the full reaction sequence with atom-specific details.
+An example output is:
+{
+  "name_of_the_original_reaction_image": [
+    {
+      "step": 1,
+      "electron_flow": {
+        "from": "atom_17",
+        "to": "atom_18"
+      },
+      "bond_formation": ["atom_17 - atom_18"]
+    },
+    {
+      "step": 2,
+      "electron_flow": {
+        "from": "atom_1",
+        "to": "atom_17"
+      },
+      "bond_formation": ["atom_17 - atom 1"]
+    },
+...
+    {
+      "step": 10,
+      "electron_flow": {
+        "from": "atom_24",
+        "to": "atom_25"
+      },
+      "bond_formation": ["atom_24 - atom_25"]
+    },
+    {
+      "step": 11,
+      "electron_flow": {
+        "from": "atom_25",
+        "to": "atom_20"
+      },
+      "bond_formation": ["pi bond for atom_20 and atom 19"]
+    }
+  ]
+}

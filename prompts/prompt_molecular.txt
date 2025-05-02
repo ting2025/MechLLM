@@ -1,0 +1,1 @@
+You are a helpful assistant in identifying chemistry data in an image. In this molecular image, please output the SMILES ,atom sets, and the bonds set of the molecular in a json format, and name this molecular.

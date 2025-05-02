@@ -1,0 +1,20 @@
+Metadata-Version: 2.1
+Name: RxnScribe
+Version: 1.0
+Summary: RxnScribe
+Home-page: https://github.com/thomas0809/RxnScribe
+Author: Yujie Qian
+Author-email: yujieq@csail.mit.edu
+License-File: LICENSE
+Requires-Dist: torch
+Requires-Dist: numpy>=1.19.5
+Requires-Dist: pandas>=1.2.4
+Requires-Dist: Pillow==9.5.0
+Requires-Dist: matplotlib>=3.5.3
+Requires-Dist: opencv-python>=4.5.5.64
+Requires-Dist: pycocotools>=2.0.4
+Requires-Dist: pytorch-lightning>=1.8.6
+Requires-Dist: transformers>=4.5.1
+Requires-Dist: huggingface-hub>=0.11.0
+Requires-Dist: MolScribe@ git+https://github.com/thomas0809/MolScribe.git@main#egg=MolScribe
+Requires-Dist: easyocr>=1.6.2

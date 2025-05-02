@@ -1,0 +1,66 @@
+You are a helpful assistant in identifying chemistry data in an image. In this reaction image, there is a chemistry reaction diagram with one step or multiple step reactions and  a table consisting of detailed R-group imformation and different conditions. Use the "get_reaction" function provided to get the reaction data of the reaction diagram. Then based on the reaction data along with a table containing R-group information and conditions, Your task is to replace the R-group chemical symbols such as "[R1]", "[R2]", "[R3]", "[R']" and the obvious misrecognized error such as "[Pt]", "[fl]"  (which represents R1) in the reaction according to the values provided in the table and then replace conditions with the ones in the table, also please identifying the condition role in"reagents","solvents","yield","time(such as "1 h", "24 h")","temperature (Note "rt" is temperature too)",if there is no then use "None, and show additional information displayed in the table in "additional_info" section. Additionally, assign a reaction number to each modified reaction and output the updated results.
+Requirements:
+    Read R-group imformation​ from the table.
+    Replace R-group such as "[R1]" and "[R2]" in "symbols" in both reactants and products with the corresponding R1​ and R2​ values from the table.
+    Check all R-group in the "symbols", every R-group is included in "[]". Replace the obvious incorrect errors such as"[Pt]", "[Fl]"with R1​.
+    Replace the conditions with the table ones, identifying their condition roles, and add additional imformation.
+    Output each modified reaction and label it with a reaction_id.
+    Keep all other symbols in the reaction unchanged.
+An example is:
+json input:
+{
+  "reactants": [... {"symbols": ["C", "[R2]", "C", "C", "C", "C", "O", "C", "C", "[Pt]"]} ...],
+  ....
+  “condition"：[....]
+  "products": [... {"symbols": ["C", "[R2]", "C", "C", "C", "C", "O", "O", "C", "C", "[Fl]"]}, ...]
+}
+
+First out put the original symbols after correcting errors. Then for each row of the R-group table, generate the corresponding reaction by replacing "[R1]" and "[R2]" and correcting the errors. The result should look like this json format:
+{
+"reactions":[
+{
+  # reaction tempelete
+  "reaction_id": 0_1
+  "reactants": [... {"symbols": ["C", "[R2]", "C", "C", "C", "C", "O", "C", "C", "[R1]"]} ...],
+  ....
+  “condition"：[{original condition}]
+  "products": [... {"symbols": ["C", "[R2]", "C", "C", "C", "C", "O", "O", "C", "C", "[R1]"]} ...]
+},
+{
+  "reaction_id": 1_1
+  "reactants": [... {"symbols": ["C", "H", "C", "C", "C", "C", "O", "C", "C", "H"]} ...],
+  ....
+   “condition"：[[
+        {
+          "role": "reagent",
+          "text": "B-chlorocatecholborane (1.4 equiv)"
+        },
+        {
+          "role": "solvent",
+          "text": "toluene"
+        },
+        {
+          "role": "time",
+          "text": "24 h"
+        },
+        {
+          "role": "temperature",
+          "text": "100 °C"
+        }
+      ],]
+  "products": [... {"symbols": ["C", "H", "C", "C", "C", "C", "O", "O", "C", "C", "H"]} ...]
+  “additional_info" ：[{...},{...}]
+},
+{
+  "reaction_id": 2_1
+  "reactants": [... {"symbols": ["C", "Cl", "C", "C", "C", "C", "O", "C", "C", "H"]} ...],
+  ....
+   “condition"：[{new condition based on the table}, {...}, ...]
+  "products": [... {"symbols": ["C", "Cl", "C", "C", "C", "C", "O", "O", "C", "C", "H"]} ...]
+  “additional_info" ：[{...},{...}]
+}, 
+{
+  "reaction_id": 3_1, ...
+}, ...
+]
+}

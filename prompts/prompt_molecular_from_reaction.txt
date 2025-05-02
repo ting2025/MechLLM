@@ -1,0 +1,1 @@
+You are a helpful assistant in identifying chemistry data in an image. In this reaction image, there are chemistry reaction diagrams with multiple molecular diagrams. Please only output a SMILES list of all the molecular diagrams in a json format. 
