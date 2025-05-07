@@ -20,9 +20,11 @@ python requirements.py
 ### LLM utilization
 This repository uses ChatGPT-4o as a demonstration of assisted information extraction by LLM in such visual chemistry tasks, therefore you will need to have your own API key in order to assess the features in this repository. Copy and paste your API key into `API_key.txt`.
 ## Atom labelling
-### Molecular Labelling
-### Text Labeling
+The referencing of atoms uses number to label all the atoms, both graph based and text based molecules in the reaction.</br>
 
+This repository highly leverages [MolScribe](https://github.com/thomas0809/MolScribe) and [RxnScribe](https://github.com/thomas0809/RxnScribe/tree/main). Refer to their paper and their code for a deeper understanding of how I leveraged their object recognition method and optical character recogniton. </br>
+## Information Extraction
+From Pistachio, I generated 17k synthetic reaction images and drawed synthetic curved arrows based on the atom label. They are documented as a JSON file respectively. Please refer to [Huggingface](https://huggingface.co/datasets/Ting25/MechLLM), and download respecting files.
 ## Performance Evaluation
 ## LLM application
 
