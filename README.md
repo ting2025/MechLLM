@@ -24,7 +24,7 @@ The referencing of atoms uses number to label all the atoms, both graph based an
 
 This repository highly leverages [MolScribe](https://github.com/thomas0809/MolScribe) and [RxnScribe](https://github.com/thomas0809/RxnScribe/tree/main). Refer to their paper and their code for a deeper understanding of how I leveraged their object recognition method and optical character recogniton. </br>
 ## Information Extraction
-From Pistachio, I generated 17k synthetic reaction images and drawed synthetic curved arrows based on the atom label. They are documented as a JSON file respectively. Please refer to [Huggingface](https://huggingface.co/datasets/Ting25/MechLLM), and download respecting files. </br>
+From Pistachio, this project generated 17k synthetic reaction images and drawed synthetic curved arrows based on the atom label. They are documented as a JSON file respectively. Please refer to [Huggingface](https://huggingface.co/datasets/Ting25/MechLLM), and download respecting files. </br>
 Run `getReactionNumber.ipynb` to visualize the extraction.
 
 
