@@ -18,7 +18,14 @@ please use the following and debug based on error outputs.
 python requirements.py
 ```
 ### LLM utilization
-This repository uses ChatGPT-4o as a demonstration of assisted information extraction by LLM in such visual chemistry tasks, therefore you will need to have your own API key in order to assess the features in this repository. Copy and paste your API key into `API_key.txt`.
+This repository uses ChatGPT-4o as a demonstration of assisted information extraction by LLM in such visual chemistry tasks, therefore you will need to have your own API key in order to assess the features in this repository.
+
+Option 1: Copy and paste your API key into `API_key.txt`.
+
+Option 2: Set up your API keys in your environment by:
+```
+export API_KEY=your-openai-api-key
+```
 ## Atom labelling
 The referencing of atoms uses number to label all the atoms, both graph based and text based molecules in the reaction.</br>
 
